@@ -7,5 +7,5 @@ function filtrarLivros(){
     const categoria = elementoBtn.value //aqui ele pega o valor do elemento referente ao botão que foi clicado.
 
     let livrosFiltrados = livros.filter(livro => livro.categoria == categoria);
-    console.table(livrosFiltrados);
+    exibirOsLivrosNaTela(livrosFiltrados);
 }
