@@ -1,11 +1,10 @@
-const botoes = document.querySelectorAll(".btn"); //querySelector - filtra o primeiro elemento que encontrar... 
-                                                  //querySelectorAll - filtra todos os elementos que tiverem a mesma identificação informada.
+const botoes = document.querySelectorAll(".btn");
 botoes.forEach(btn => btn.addEventListener("click", filtrarLivros));
 
 function filtrarLivros(){
-    const elementoBtn = document.getElementById(this.id); //aqui ele vai saber qual botão foi clicado.
-    const categoria = elementoBtn.value //aqui ele pega o valor do elemento referente ao botão que foi clicado.
+    const elementoBtn = document.getElementById(this.id);
+    const categoria = elementoBtn.value
 
-    let livrosFiltrados = livros.filter(livro => livro.categoria == categoria);
+    let livrosFiltrados = categoria == "disponivel" ? livros.filter(livro => livro.quantidade > 0) : livros.filter(livro => livro.categoria == categoria);
     exibirOsLivrosNaTela(livrosFiltrados);
 }
